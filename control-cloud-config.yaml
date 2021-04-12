@@ -79,9 +79,23 @@ runcmd:
     cd /run/tmp && curl -LO https://storage.googleapis.com/kubernetes-release/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl \
     && chmod +x ./kubectl \
     && mv ./kubectl /usr/local/bin/kubectl
+  # auto-complete for kubectl and alias
+  - | 
+    echo "source <(kubectl completion zsh)" >> /home/ubuntu/.zshrc
+    echo "alias k=kubectl" >> /home/ubuntu/.zshrc
+    echo "complete -F __start_kubectl k" >> /home/ubuntu/.zshrc
   # install helm
   - |
     cd /run/tmp && curl -LO https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz \
     && tar -xzvf ./helm-${HELM_VERSION}-linux-amd64.tar.gz \
     && chmod +x ./linux-amd64/helm \
     && mv ./linux-amd64/helm /usr/local/bin/helm
+  # install kubectx & kubens
+  - |
+    git clone https://github.com/ahmetb/kubectx /opt/kubectx
+    ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+    ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+    mkdir -p /home/ubuntu/.oh-my-zsh/completions
+    chmod -R 755 /home/ubuntu/.oh-my-zsh/completions
+    ln -s /opt/kubectx/completion/kubectx.zsh /home/ubuntu/.oh-my-zsh/completions/_kubectx.zsh
+    ln -s /opt/kubectx/completion/kubens.zsh /home/ubuntu/.oh-my-zsh/completions/_kubens.zsh
