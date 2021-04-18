@@ -8,4 +8,4 @@ That is, if you really need Kubernetes, because many times you might actually no
 
 ## STATUS
 
-* [] Basic local multi-node cluster for playground with [multipass](https://multipass.run), [k3s](https://k3s.io) and [k3sup](https://github.com/alexellis/k3sup) - in progress
+- [ ] Basic local multi-node cluster for playground with [multipass](https://multipass.run), [k3s](https://k3s.io) and [k3sup](https://github.com/alexellis/k3sup) - in progress
