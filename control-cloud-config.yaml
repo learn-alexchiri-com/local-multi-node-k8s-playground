@@ -66,6 +66,7 @@ runcmd:
   - su -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ubuntu
   - su -c "sed -i '0,/blue/{s/blue/39d/}' /home/ubuntu/.oh-my-zsh/themes/agnoster.zsh-theme" ubuntu
   - chsh -s /usr/bin/zsh ubuntu
+  - su -c "mkdir /home/ubuntu/.kube" ubuntu
   - cloud-init single --name write_files --frequency once
   - su -c "ssh-keygen -b 2048 -t rsa -q -N '' -f /home/ubuntu/.ssh/id_rsa" ubuntu
   - mkdir /run/tmp
