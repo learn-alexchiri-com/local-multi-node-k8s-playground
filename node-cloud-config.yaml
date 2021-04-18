@@ -1,0 +1,4 @@
+users:
+  - name: ubuntu
+    ssh_authorized_keys:
+      - {PUBLIC_KEY}
