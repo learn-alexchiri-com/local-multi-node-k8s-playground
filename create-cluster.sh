@@ -7,7 +7,7 @@ echo "Control IP: $(multipass info control --format json | jq -r .info.control.i
 
 multipass transfer control:/home/ubuntu/.ssh/id_rsa.pub ./id_rsa.pub
 PUBLIC_KEY="$(cat ./id_rsa.pub)"
-sed "s#{PUBLIC_KEY}#$PUBLIC_KEY#" node-cloud-config.yaml | multipass launch --name master --cloud-init -
+sed "s#{PUBLIC_KEY}#$PUBLIC_KEY#" node-cloud-config.yaml | multipass launch --name master --mem 3G --cpus 2 --cloud-init -
 sed "s#{PUBLIC_KEY}#$PUBLIC_KEY#" node-cloud-config.yaml | multipass launch --name node1 --cloud-init -
 sed "s#{PUBLIC_KEY}#$PUBLIC_KEY#" node-cloud-config.yaml | multipass launch --name node2 --cloud-init -
 
