@@ -1,10 +1,8 @@
-# Don't use K8s!!!
+# Local multi-node K8s playground
 
-**WARNING**: this is a very much work in progress.
+Wouldn't be nice to be able to quickly create a multi-node Kubernetes cluster on your local computer (macOS, Linux or Windows) and play with it? That is the purpose of this little project.
 
-While the title doesn't make any sense for now (I'm hoping it will at some point), the content of this repo is intended to be a super easy way to learn and get started with Kubernetes.
-
-That is, if you really need Kubernetes, because many times you might actually not need it or, more common, not being able to afford it.
+Warning: this is very much a work-in-progress.
 
 ## STATUS
 
