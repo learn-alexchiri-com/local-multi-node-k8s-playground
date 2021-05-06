@@ -8,6 +8,12 @@ Warning: this is very much a work-in-progress.
 - [multipass](https://multipass.run)
 - [jq](https://stedolan.github.io/jq/)
 
+## Get started
+
+1. Install the dependencies above for your platform
+2. Clone this repo
+3. Run ./create-cluster.sh script (Powershell script coming soon!)
+
 ## STATUS
 
 - [ ] Basic local multi-node cluster for playground with [multipass](https://multipass.run), [k3s](https://k3s.io) and [k3sup](https://github.com/alexellis/k3sup) - in progress
