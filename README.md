@@ -12,8 +12,8 @@ Warning: this is very much a work-in-progress.
 
 1. Install the dependencies above for your platform
 2. Clone this repo
-3. Run ./create-cluster.sh script (Powershell script coming soon!)
+3. Run ./create-cluster.sh script for Unix systems or .\create-cluster.ps1 for Windows
 
 ## STATUS
 
-- [ ] Basic local multi-node cluster for playground with [multipass](https://multipass.run), [k3s](https://k3s.io) and [k3sup](https://github.com/alexellis/k3sup) - in progress
+- [/] Basic local multi-node cluster for playground with [multipass](https://multipass.run), [k3s](https://k3s.io) and [k3sup](https://github.com/alexellis/k3sup)
