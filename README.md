@@ -16,4 +16,4 @@ Warning: this is very much a work-in-progress.
 
 ## STATUS
 
-- [/] Basic local multi-node cluster for playground with [multipass](https://multipass.run), [k3s](https://k3s.io) and [k3sup](https://github.com/alexellis/k3sup)
+- [x] Basic local multi-node cluster for playground with [multipass](https://multipass.run), [k3s](https://k3s.io) and [k3sup](https://github.com/alexellis/k3sup)
