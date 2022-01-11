@@ -71,9 +71,9 @@ runcmd:
   - su -c "ssh-keygen -b 2048 -t rsa -q -N '' -f /home/ubuntu/.ssh/id_rsa" ubuntu
   - mkdir /run/tmp
   # versions
-  - export KUBECTL_VERSION="v1.19.2"
+  - export KUBECTL_VERSION="v1.22.5"
   - export HELM_VERSION="v3.5.2"
-  - export K3SUP_VERSION="0.10.2"
+  - export K3SUP_VERSION="0.11.3"
   # install kubectl
   - | 
     cd /run/tmp && curl -LO https://storage.googleapis.com/kubernetes-release/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl \
@@ -97,8 +97,8 @@ runcmd:
     ln -s /opt/kubectx/kubens /usr/local/bin/kubens
     mkdir -p /home/ubuntu/.oh-my-zsh/completions
     chmod -R 755 /home/ubuntu/.oh-my-zsh/completions
-    ln -s /opt/kubectx/completion/kubectx.zsh /home/ubuntu/.oh-my-zsh/completions/_kubectx.zsh
-    ln -s /opt/kubectx/completion/kubens.zsh /home/ubuntu/.oh-my-zsh/completions/_kubens.zsh
+    ln -s /home/ubuntu/.oh-my-zsh/completions/_kubectx.zsh /opt/kubectx/completion/kubectx.zsh
+    ln -s /home/ubuntu/.oh-my-zsh/completions/_kubens.zsh /opt/kubectx/completion/kubens.zsh
   # install k3sup
   - | 
     cd /run/tmp && curl -LO https://github.com/alexellis/k3sup/releases/download/${K3SUP_VERSION}/k3sup \

@@ -10,7 +10,7 @@ sed "s#{PUBLIC_KEY}#$PUBLIC_KEY#" node-cloud-config.yaml | multipass launch --na
 sed "s#{PUBLIC_KEY}#$PUBLIC_KEY#" node-cloud-config.yaml | multipass launch --name node2 --cloud-init -
 
 MASTER_IP="$(multipass info master --format json | jq -r .info.master.ipv4[0])"
-multipass exec control -- k3sup install --ip $MASTER_IP --user ubuntu --local-path /home/ubuntu/.kube/config --k3s-extra-args '--no-deploy traefik'
+multipass exec control -- k3sup install --ip $MASTER_IP --user ubuntu --local-path /home/ubuntu/.kube/config --k3s-extra-args '--no-deploy traefik' --k3s-version 'v1.22.5+k3s1'
 NODE1_IP="$(multipass info node1 --format json | jq -r .info.node1.ipv4[0])"
 multipass exec control -- k3sup join --ip $NODE1_IP --server-ip $MASTER_IP --user ubuntu
 NODE2_IP="$(multipass info node2 --format json | jq -r .info.node2.ipv4[0])"
