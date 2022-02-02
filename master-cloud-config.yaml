@@ -1,0 +1,11 @@
+users:
+  - name: ubuntu
+    ssh_authorized_keys:
+      - {PUBLIC_KEY}
+write_files:
+  - content: |
+      apiVersion: kubescheduler.config.k8s.io/v1beta2
+      kind: KubeSchedulerConfiguration
+      clientConnection:
+        kubeconfig: /var/lib/rancher/k3s/server/cred/scheduler.kubeconfig      
+    path: /etc/sched_config.yaml
