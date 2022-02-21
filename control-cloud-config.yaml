@@ -19,9 +19,9 @@ packages:
     - ca-certificates 
     - software-properties-common 
     - jid
-package_update: true
-package_upgrade: true
-package_reboot_if_required: true
+package_update: false
+package_upgrade: false
+package_reboot_if_required: false
 locale: en_US.UTF-8
 write_files:
   - content: |
